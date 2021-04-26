@@ -1,3 +1,7 @@
+/**
+ * This contians the models used to map the responses receiving from thr OMBD server.
+ */
+
 export interface Movie {
   Title: string;
   Year: string;

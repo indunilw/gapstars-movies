@@ -12,6 +12,12 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * This method searches and maps the list of movies from the OMDB server.
+   *
+   * @param movieSearch user entered value
+   * @returns Observable<Array<Movie>> type objects
+   */
   getMovie(movieSearch: string): Observable<Array<Movie>> {
     return this.http.get(`https://omdbapi.com/?apikey=${this.API_KEY}&s=${movieSearch}`)
       .pipe(
@@ -19,6 +25,11 @@ export class MovieService {
       );
   }
 
+  /**
+   * This method fetches details of a particula movie from the OMDB server.
+   * @param movieId movie ID to retrieve the movie details
+   * @returns Observable <Movie> object
+   */
   getMovieDetails(movieId: string): Observable<MovieDetail> {
     return this.http.get<MovieDetail>(
       `https://www.omdbapi.com/?apikey=${this.API_KEY}&i=${movieId}&plot=short`);
