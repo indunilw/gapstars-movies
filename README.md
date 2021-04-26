@@ -25,6 +25,7 @@ Setting up from API KEY.
 
 ## Testing the APIs
 • APIs can be tested using the Postman application.
+
 • Two APIs are used to build the application.
 
 
