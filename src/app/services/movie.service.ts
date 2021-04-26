@@ -2,13 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/observable';
 import { map } from 'rxjs/operators';
-
+import { environment } from '../../environments/environment';
 import { Movie, MovieDetail } from '../models/movie.model';
 
 @Injectable()
 export class MovieService {
-
-  private readonly API_KEY = `2911272e`;
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +17,7 @@ export class MovieService {
    * @returns Observable<Array<Movie>> type objects
    */
   getMovie(movieSearch: string): Observable<Array<Movie>> {
-    return this.http.get(`https://omdbapi.com/?apikey=${this.API_KEY}&s=${movieSearch}`)
+    return this.http.get(environment.apiendpoint +`?apikey=${environment.apikey}&s=${movieSearch}`)
       .pipe(
         map((response: any) => response.Search)
       );
@@ -32,6 +30,6 @@ export class MovieService {
    */
   getMovieDetails(movieId: string): Observable<MovieDetail> {
     return this.http.get<MovieDetail>(
-      `https://www.omdbapi.com/?apikey=${this.API_KEY}&i=${movieId}&plot=short`);
+      environment.apiendpoint + `?apikey=${environment.apikey}&i=${movieId}&plot=short`);
   }
 }
