@@ -1,0 +1,22 @@
+.container {
+    margin: 40px auto;
+    align-content: center;
+  }
+
+.movies-gapstars-info-bar {
+   background-color: skyblue;
+   text-align: center;
+}
+
+.movies-gapstars-error-bar {
+  background-color: tomato;
+  text-align: center;
+  border-style: dotted;
+}
+
+.row{
+  align-content: center;
+  align-self: center;
+  display: flex; 
+  justify-content: space-around;
+}

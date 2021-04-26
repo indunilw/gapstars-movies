@@ -1,0 +1,17 @@
+.movies-gapstars-card {
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.movies-gapstars-img {
+  width: 250px;
+  height: 300px;
+  float:left;
+  display: block;
+}
+
+.movies-gapstars-summary {
+  padding-left: 250px;
+  width: 100%;
+}

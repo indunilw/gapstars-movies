@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="form-group">
+      <input  id="movieSearch" type="text"  class="form-control" [(ngModel)]="movieSearch" placeholder="Search for a movie from the OMDB search!"></div>
+    <button type="button" (click)="getMovies()" class="form-control btn btn-primary">Search</button>
+    <hr>
+    <div class="row">
+      <app-card
+        *ngFor="let movie of movies$ | async" [movie]="movie">
+      </app-card>
+    </div>
+    <div class="movies-gapstars-info-bar" *ngIf="!(movies$ | async)?.length && initialLoading">
+      Welcome to OMDB Search, search for a movie using the movie search above!
+    </div>
+    <div class="movies-gapstars-error-bar" *ngIf="noDataFound">
+     No movie found for the entered search criteria. Please try again!
+    </div>
+</div>
+
+  

@@ -1,0 +1,30 @@
+  <mat-card class="movies-gapstars-card">
+    <mat-card-header>
+      <mat-card-title style="width: 200px;">{{ movie.Title }}</mat-card-title>
+      <mat-card-subtitle>{{ movie.Year }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <img mat-card-image [src]="movie.Poster" [alt]="movie.Title" class="movies-gapstars-img">
+      <div *ngIf="movie.Summary" class="movies-gapstars-summary">
+        <h3> Plot</h3>
+        <p>
+          {{movieDetails.Plot}}
+        </p>
+        <h3>Actors</h3>
+        <p>
+          {{movieDetails.Actors}}
+        </p>
+        <h3>Ratings</h3>
+        <ul>
+          <li *ngFor="let rating of movieDetails.Ratings">
+            {{ rating.Source }} - {{ rating.Value }}
+          </li>
+        </ul>
+        <button mat-button (click)="revertDetails()" *ngIf="movie.Summary" style="padding-left: 20px;">SHOW
+          LESS</button>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="loadDetails()" *ngIf="!movie.Summary">DETAILS</button>
+    </mat-card-actions>
+  </mat-card>
