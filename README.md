@@ -1,6 +1,6 @@
 # MoviesGapstars
 
-##Application Setting up
+## Application Setting up
 1. Install VSCODE.
 2. Install Node
 3. Install NPM.
@@ -13,7 +13,7 @@
 10. Access application using localhost:4200/
 
 
-##Backend APIs
+## Backend APIs
 • APIs are taken from the http://www.omdbapi.com/.
 Setting up from API KEY.
 1. Navigate to http://www.omdbapi.com/
@@ -23,12 +23,12 @@ Setting up from API KEY.
 5. Add the new key to the environment.ts file’ API_KEY variable.
 
 
-##Testing the APIs
+## Testing the APIs
 • APIs can be tested using the Postman application.
 • Two APIs are used to build the application.
 
 
-###Testing steps for fetching movie list from OMDB server.
+### Testing steps for fetching movie list from OMDB server.
 1. Load postman and get a new window.
 2. Select GET as the request type.
 3. Add https://omdbapi.com/?apikey=${this.API_KEY}&s=${movieSearch} as the URL.
@@ -36,7 +36,7 @@ Setting up from API KEY.
 5. Send request.
 
 
-###Testing steps to receive movie details from the OMDB server.
+### Testing steps to receive movie details from the OMDB server.
 1. Load postman and get a new window.
 2. Select GET as the request type.
 3. Add https://www.omdbapi.com/?apikey=${this.API_KEY}&i=${movieId}&plot=short as the URL.
